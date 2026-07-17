@@ -1,0 +1,109 @@
+============================================================
+NETWORK SUMMARY: IEEE 9-Bus (WSCC) Test System
+============================================================
+Buses (nodes)         : 9
+Transmission lines    : 9
+Generators (PV buses) : 2
+External grid (slack) : 1
+Loads (demand points) : 3
+Voltage level         : 345.0 kV
+
+============================================================
+BASE CASE POWER FLOW RESULTS
+============================================================
+
+--- Bus Voltages (per unit) ---
+bus_name  voltage_pu  angle_degrees
+       1    1.000000       0.000000
+       2    1.000000       9.668741
+       3    1.000000       4.771073
+       4    0.987007      -2.406644
+       5    0.975472      -4.017264
+       6    1.003375       1.925602
+       7    0.985645       0.621545
+       8    0.996185       3.799120
+       9    0.957621      -4.349934
+
+--- Line Loading (%) ---
+    line  loading_percent
+Line 1-4        30.349415
+Line 4-5        13.728971
+Line 5-6        42.128485
+Line 3-6        28.359430
+Line 6-7        23.154484
+Line 7-8        31.136975
+Line 8-2        65.456056
+Line 8-9        35.606908
+Line 9-4        22.700497
+
+--- System Losses ---
+Total real power loss     : 4.955 MW
+Total reactive power loss : -80.120 Mvar
+
+--- Voltage Violation Check (limits: 0.95 - 1.05 pu) ---
+No voltage violations. All buses are within 0.95-1.05 pu.
+
+Saved: outputs/voltage_profile.png
+Saved: outputs/line_loading.png
+============================================================
+POWER FLOW RESULTS WITH SOLAR PV ADDED
+============================================================
+
+--- Bus Voltages (per unit) ---
+bus_name  voltage_pu  angle_degrees
+       1    1.000000       0.000000
+       2    1.000000      11.655748
+       3    1.000000       6.382931
+       4    0.987654      -1.395195
+       5    0.975694      -2.793413
+       6    1.003615       3.538139
+       7    0.986218       2.457919
+       8    0.997066       5.791329
+       9    0.961431      -1.974582
+
+--- Line Loading (%) ---
+    line  loading_percent
+Line 1-4        18.865669
+Line 4-5        12.619577
+Line 5-6        44.312006
+Line 3-6        28.365612
+Line 6-7        21.537663
+Line 7-8        32.631022
+Line 8-2        65.408430
+Line 8-9        33.961023
+Line 9-4        16.167984
+
+--- System Losses ---
+Total real power loss     : 4.750 MW
+Total reactive power loss : -84.073 Mvar
+
+--- Voltage Violation Check (limits: 0.95 - 1.05 pu) ---
+No voltage violations. All buses are within 0.95-1.05 pu.
+
+============================================================
+BEFORE vs AFTER: Solar Generator Injection
+(30 MW solar PV added at Bus 9)
+============================================================
+
+--- Voltage magnitude (pu) ---
+Bus         Before     After      Change
+Bus 1       1.0000    1.0000     +0.0000
+Bus 2       1.0000    1.0000     -0.0000
+Bus 3       1.0000    1.0000     -0.0000
+Bus 4       0.9870    0.9877     +0.0006
+Bus 5       0.9755    0.9757     +0.0002
+Bus 6       1.0034    1.0036     +0.0002
+Bus 7       0.9856    0.9862     +0.0006
+Bus 8       0.9962    0.9971     +0.0009
+Bus 9       0.9576    0.9614     +0.0038
+
+--- Total real power loss (MW) ---
+Before: 4.955 MW
+After : 4.750 MW
+Change: -0.205 MW (-4.1%)
+
+Saved: outputs/voltage_comparison_solar.png
+Saved: outputs/losses_comparison_solar.png
+============================================================
+Done. All plots saved in the 'outputs/' folder.
+============================================================
